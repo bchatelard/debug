@@ -55,6 +55,7 @@ RUN apt-get install -y \
     vim \
     wget \
     xxdiff \
+    wait-for-it \
   && apt-get clean
 
 RUN mkdir /var/run/sshd
