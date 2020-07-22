@@ -42,6 +42,7 @@ RUN apt-get install -y \
     netperf \
     nghttp2 \
     openssh-client \
+    openssh-server \
     openssl \
     postgresql-client \
     procps \
@@ -56,5 +57,16 @@ RUN apt-get install -y \
     xxdiff \
   && apt-get clean
 
+RUN mkdir /var/run/sshd
+RUN mkdir /root/.ssh
+RUN chmod 0700 /root/.ssh
+RUN echo 'root:root' | chpasswd
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+ENV NOTVISIBLE "in users profile"
+RUN echo "export VISIBLE=now" >> /etc/profile
+
+EXPOSE 22
 
 ENV TERM=xterm
+
+CMD ["sleep", "infinity"]
