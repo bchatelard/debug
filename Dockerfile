@@ -55,6 +55,7 @@ RUN apt-get install -y \
     vim \
     wget \
     xxdiff \
+    ntpdate \
     wait-for-it \
   && apt-get clean
 
