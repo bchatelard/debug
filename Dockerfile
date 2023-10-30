@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 MAINTAINER Bastien Chatelard <chatel.bast@gmail.com>
 
 RUN apt-get update
@@ -54,7 +54,6 @@ RUN apt-get install -y \
     unzip \
     vim \
     wget \
-    xxdiff \
     ntpdate \
     wait-for-it \
   && apt-get clean
