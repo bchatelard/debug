@@ -1,8 +1,7 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 MAINTAINER Bastien Chatelard <chatel.bast@gmail.com>
 
-RUN apt-get update
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y tzdata --fix-missing && apt-get install -y --fix-missing \
     bind9utils \
     build-essential \
     bzip2 \
