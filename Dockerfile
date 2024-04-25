@@ -55,6 +55,8 @@ RUN apt-get update && apt-get install -y tzdata --fix-missing && apt-get install
     wget \
     ntpdate \
     wait-for-it \
+    stress-ng \
+    sysbench \
   && apt-get clean
 
 RUN mkdir /var/run/sshd
